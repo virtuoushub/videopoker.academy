@@ -4,7 +4,7 @@ import Card from "@/islands/Card.jsx"
 import Debug from "@/islands/Debug.jsx"
 import Keyboard from "@/islands/Keyboard.jsx"
 // import PokerGame from "../islands/PokerGame.jsx";
-import { DENO_ENV, GA_ID } from "@/utils/config.js"
+import { DENO_ENV } from "@/utils/config.js"
 
 export const handler = {
   GET: (_req, ctx) => {
@@ -43,26 +43,6 @@ export const Layout = ({ children, data }) => {
           content="Video Poker Academy is a fun way to improve your Video Poker skills."
         >
         </meta>
-        {DENO_ENV === "production"
-          ? (
-            <>
-              <script
-                async
-                src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
-              >
-              </script>
-              <script
-                dangerouslySetInnerHTML={{
-                  __html: `window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', '${GA_ID}');`,
-                }}
-              >
-              </script>
-            </>
-          )
-          : <></>}
       </Head>
       <Nav />
       {children}
