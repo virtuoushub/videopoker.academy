@@ -38,3 +38,13 @@ base64 -i .env.github | pbcopy
 ```
 
 secret name should be `ENV_GITHUB_ACTIONS`
+
+---
+
+```sh
+deno test --allow-env --allow-read --allow-run=deno --allow-write
+```
+
+```sh
+PUPPETEER_PRODUCT=chrome deno run -A --unstable https://deno.land/x/puppeteer@16.2.0/install.ts
+```

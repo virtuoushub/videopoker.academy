@@ -1,23 +1,9 @@
-import { Options } from "$fresh/plugins/twind.ts"
-import * as colors from "twind/colors"
+import { defineConfig } from "https://esm.sh/@twind/core@1.1.3"
+import presetTailwind from "https://esm.sh/@twind/preset-tailwind@1.1.4"
 
 export default {
+  ...defineConfig({
+    presets: [presetTailwind()],
+  }),
   selfURL: import.meta.url,
-  theme: {
-    screens: {
-      sm: "480px",
-      md: "768px",
-      lg: "976px",
-      xl: "1440px",
-    },
-    colors: {
-      // Build your palette here
-      teal: colors.teal,
-      sky: colors.sky,
-      red: colors.red,
-      yellow: colors.yellow,
-      white: colors.white,
-      black: colors.black,
-    },
-  },
-} as Options
+}

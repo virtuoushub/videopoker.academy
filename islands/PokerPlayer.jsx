@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "preact/hooks"
-import { tw } from "twind"
+import { tw } from "@twind/core"
 import { getNewCards } from "@/utils/deck.js"
 import { score } from "@/utils/poker.js"
 import { simpleStrategy } from "@/utils/simple-strategy/mod.js"

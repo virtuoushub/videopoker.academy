@@ -12,7 +12,7 @@ import {
 } from "@/utils/config.js"
 
 const store = await redis.connect({
-  password: REDIS_PASS,
+  // password: REDIS_PASS,
   hostname: REDIS_HOST,
   port: REDIS_PORT,
 })

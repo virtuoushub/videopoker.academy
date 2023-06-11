@@ -1,5 +1,5 @@
 import { useState } from "preact/hooks"
-import { apply, tw } from "twind"
+import { apply, tw } from "@twind/core"
 import { aspectRatio } from "@/utils/aspect-ratio.ts"
 
 export const Card = ({ card, idx, hold, active = false }) => {

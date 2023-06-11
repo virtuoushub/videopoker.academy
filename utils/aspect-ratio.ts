@@ -1,15 +1,10 @@
 // I got this from somewhere, but I can't make it work as a remote include.
+// FIXME
 
-import type {
-  Context,
-  CSSRules,
-  Directive,
-  MaybeThunk,
-  ThemeSection,
-} from "twind"
-import { apply, directive } from "twind"
+import type { Context, MaybeThunk, ThemeSection } from "@twind/core"
+import { apply } from "@twind/core"
 
-declare module "twind" {
+declare module "@twind/core" {
   interface Theme {
     aspectRatio?: ThemeSection<string>
   }
@@ -21,9 +16,9 @@ export interface Ratio {
 }
 
 export interface AspectRatio {
-  (ratio: "none" | `${number}/${number}` | Ratio): Directive<CSSRules>
-  (width: string | number, height: string | number): Directive<CSSRules>
-  (parts: string[], context: Context): Directive<CSSRules>
+  (ratio: "none" | `${number}/${number}` | Ratio): any
+  (width: string | number, height: string | number): any
+  (parts: string[], context: Context): any
 }
 
 const aspectRatioCalc = () => ({
@@ -32,8 +27,8 @@ const aspectRatioCalc = () => ({
 
 const aspectRatio$ = (
   ratio: "none" | { w?: string | number; h?: string | number },
-  { theme, tag }: Context,
-): MaybeThunk<CSSRules | ""> =>
+  { theme }: Context,
+): MaybeThunk<any | ""> =>
   ratio === "none"
     ? apply`static pb-0 children:(static h-auto w-auto inset-auto)`
     : ratio.w === "ratio"

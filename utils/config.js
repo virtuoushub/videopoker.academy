@@ -2,7 +2,7 @@
 import { load } from "$std/dotenv/mod.ts"
 import { cleanEnv, host, port, str, url } from "envalid"
 
-const ENV = cleanEnv(await load(), {
+const ENV = cleanEnv(await load({ allowEmptyValues: true }), {
   // API_URL: url(),
   BASE_URL: url(),
   DENO_ENV: str({ choices: ["development", "testing", "production"] }),

@@ -1,4 +1,4 @@
-import { apply } from "twind"
+import { apply } from "@twind/core"
 import { asset, Head } from "$fresh/runtime.ts"
 import Card from "@/islands/Card.jsx"
 import Debug from "@/islands/Debug.jsx"
